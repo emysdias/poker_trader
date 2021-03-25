@@ -11,5 +11,32 @@ html {
 }
 
 .introduction__container {
+  display: block;
+  position: relative;
+  background-color: var(--white);
+  height: 24.5rem;
+  width: 29.188rem;
+	margin: auto;
+  margin-top: 5rem;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--orange);
+}
+
+.introduction__container__text {
+  display: flex;
+  text-align: center;
+  padding: 6rem 0;
   color: var(--darkPurple);
+  font-size: 1.125rem;
+}
+
+.introduction__container__button {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.introduction__container__image {
+  margin-top: -5rem;
+  position: absolute;
+  margin-left: 20rem;
 }
