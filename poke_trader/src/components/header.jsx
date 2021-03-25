@@ -14,6 +14,7 @@ const Header = ({ imgPokemon, color, icon }) => {
         </h1>
         <img
           className="header__container__content__image"
+          alt="pokemon"
           src={imgPokemon}
           height="50"
           width="50"

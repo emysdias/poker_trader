@@ -10,7 +10,7 @@ const Introduction = () => {
       <Header imgPokemon={Pokemon} color={"#392939"} />
       <section className="introduction__container">
         <section className="introduction__container__image">
-          <img src={Pokemon} height="200" width="200"/>
+          <img src={Pokemon} height="200" width="200" alt="pokemon" />
         </section>
         <section className="introduction__container__text">
           Bem vindo, este é um game baseado em pokémons e ele consiste em dois
