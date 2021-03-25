@@ -1,11 +1,10 @@
 import React from "react";
-import Introduction from "./pages/introduction";
-import Result from "./pages/result";
+import Routes from "./routes";
 
 function App() {
   return (
     <div>
-      <Result />
+      <Routes />
     </div>
   );
 }

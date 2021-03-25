@@ -6,8 +6,9 @@
   --yellowGreen: #B3A125;
 }
 
-body, html {
-  background-color: var(--green) !important;
+.result {
+  background-color: var(--green);
+  height: 100vh;
 }
 .result__container {
   display: block;

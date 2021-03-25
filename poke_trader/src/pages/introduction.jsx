@@ -1,15 +1,18 @@
 import React from "react";
-import "../styles/layout/introduction.css";
+import { Link } from "react-router-dom";
+
 import Header from "../components/header";
 import Button from "../components/button";
 import Pokemon from "../assets/gastly.png";
+
+import "../styles/layout/introduction.css";
 
 const Introduction = () => {
   const darkPurple = "#392939";
   const white = "#ffffff";
   const orange = "#de5239";
   return (
-    <section>
+    <section className="introduction">
       <Header imgPokemon={Pokemon} color={darkPurple} />
       <section className="introduction__container">
         <section className="introduction__container__image">
@@ -22,11 +25,16 @@ const Introduction = () => {
           distintos.
         </section>
         <section className="introduction__container__button">
-          <Button
-            fontColor={white}
-            backgroundColor={orange}
-            text={"Começar"}
-          />
+          <Link
+            style={{ textDecoration: "none" }}
+            to={{ pathname: "/first" }}
+          >
+            <Button
+              fontColor={white}
+              backgroundColor={orange}
+              text={"Começar"}
+            />
+          </Link>
         </section>
       </section>
     </section>

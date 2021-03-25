@@ -1,0 +1,50 @@
+:root {
+  --white: #ffffff;
+  --lightGreen: #73ac31;
+  --green: #184a4a;
+  --greenBlue: #399494;
+  --black: #000000;
+}
+
+.player1__container {
+  background-color: var(--greenBlue)!important;
+  height: 100vh;
+}
+
+.player1__container__button {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.player1__container__content {
+  display: block;
+  position: relative;
+  background-color: var(--white);
+  height: 26rem;
+  width: 29.188rem;
+  margin: auto;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--lightGreen);
+  overflow-y: scroll;
+}
+
+.player1__container__content::-webkit-scrollbar {
+  display: none;
+}
+
+.player1__container__content{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.player1__container__content__select {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.player1__container__content__select__input {
+  width: 4rem;
+  text-align: center;
+}

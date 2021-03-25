@@ -1,0 +1,52 @@
+:root {
+  --white: #ffffff;
+  --lightGreen: #73ac31;
+  --green: #184a4a;
+  --greenBlue: #399494;
+  --pink: #ff5a6a;
+  --black: #000000;
+  --purple: #628BBD;
+}
+
+.player2__container {
+  background-color: var(--purple);
+  height: 100vh;
+}
+
+.player2__container__button {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.player2__container__content {
+  display: block;
+  position: relative;
+  background-color: var(--white);
+  height: 26rem;
+  width: 29.188rem;
+  margin: auto;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--pink);
+  overflow-y: scroll;
+}
+
+.player2__container__content::-webkit-scrollbar {
+  display: none;
+}
+
+.player2__container__content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.player2__container__content__select {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.player2__container__content__select__input {
+  width: 4rem;
+  text-align: center;
+}
