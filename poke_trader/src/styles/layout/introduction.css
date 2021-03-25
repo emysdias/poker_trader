@@ -1,0 +1,15 @@
+:root {
+  --lightPurple: #bd94b4;
+  --orange: #de5239;
+  --darkPurple: #392939;
+  --white: #ffffff;
+}
+
+body,
+html {
+  background-color: var(--lightPurple);
+}
+
+.introduction__container {
+  color: var(--darkPurple);
+}

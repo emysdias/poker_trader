@@ -1,9 +1,10 @@
-import './App.css';
+import React from "react";
+import Introduction from "./pages/introduction";
 
 function App() {
   return (
     <div>
-      hii
+      <Introduction />
     </div>
   );
 }

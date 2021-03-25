@@ -1,0 +1,31 @@
+:root {
+  --white: #FFFFFF;
+}
+
+.header__container {
+  height: 3rem 0;
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  min-width: 9.375rem;
+}
+
+.header__container__content {
+  margin-left: 1rem;
+  display: flex;
+}
+
+.header__container__content__text {
+  font-size: 0.875rem;
+}
+
+.header__container__content__image {
+  margin-left: 0.5rem;
+}
+
+.header__container__content__icon {
+  font-size: 2rem;
+  min-width: 2rem;
+  margin-right: 1rem;
+  margin-top: 0.7rem;
+}
