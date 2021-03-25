@@ -33,6 +33,7 @@ const Introduction = () => {
               fontColor={white}
               backgroundColor={orange}
               text={"Começar"}
+              shadow
             />
           </Link>
         </section>

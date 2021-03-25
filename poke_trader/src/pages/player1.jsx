@@ -41,6 +41,7 @@ const Player1 = () => {
             fontColor={green}
             backgroundColor={lightGreen}
             text={"Próximo jogador"}
+            shadow
           />
         </Link>
       </section>

@@ -1,15 +1,24 @@
 import React from "react";
 import "../styles/layout/button.css";
 
-const Button = ({ text, fontColor, backgroundColor }) => {
+const Button = ({ text, fontColor, backgroundColor, shadow }) => {
   return (
     <section>
-      <button
-        className="button__container"
-        style={{ color: fontColor, backgroundColor: backgroundColor }}
-      >
-        {text}
-      </button>
+      {shadow ? (
+        <button
+          className="button__container__click"
+          style={{ color: fontColor, backgroundColor: backgroundColor }}
+        >
+          {text}
+        </button>
+      ) : (
+        <button
+          className="button__container"
+          style={{ color: fontColor, backgroundColor: backgroundColor }}
+        >
+          {text}
+        </button>
+      )}
     </section>
   );
 };

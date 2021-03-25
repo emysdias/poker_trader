@@ -23,6 +23,7 @@ const Result = ({ text }) => {
             fontColor={black}
             backgroundColor={yellow}
             text={"Jogar novamente"}
+            shadow
           />
         </Link>
       </section>

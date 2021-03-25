@@ -38,6 +38,7 @@ const Player2 = () => {
             fontColor={white}
             backgroundColor={pink}
             text={"Trocar pokémons"}
+            shadow
           />
         </Link>
       </section>
