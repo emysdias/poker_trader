@@ -5,9 +5,12 @@ import Button from "../components/button";
 import Pokemon from "../assets/gastly.png";
 
 const Introduction = () => {
+  const darkPurple = "#392939";
+  const white = "#ffffff";
+  const orange = "#de5239";
   return (
     <section>
-      <Header imgPokemon={Pokemon} color={"#392939"} />
+      <Header imgPokemon={Pokemon} color={darkPurple} />
       <section className="introduction__container">
         <section className="introduction__container__image">
           <img src={Pokemon} height="200" width="200" alt="pokemon" />
@@ -20,8 +23,8 @@ const Introduction = () => {
         </section>
         <section className="introduction__container__button">
           <Button
-            fontColor={"#ffffff"}
-            backgroundColor={"#DE5239"}
+            fontColor={white}
+            backgroundColor={orange}
             text={"Começar"}
           />
         </section>

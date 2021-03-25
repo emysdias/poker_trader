@@ -1,7 +1,27 @@
 :root {
-  --yellow: #FFDE00;
+  --green: #399494;
   --red: #FF0000;
   --black: #000000;
   --white: #FFFFFF;
   --yellowGreen: #B3A125;
+}
+
+body, html {
+  background-color: var(--green) !important;
+}
+.result__container {
+  display: block;
+}
+
+.result__container__text {
+  color: var(--white);
+  text-align: center;
+  font-size: 4.5rem;
+  margin-top: 10%;
+}
+
+.result__container__button {
+  text-align: center;
+  margin-top: 15%;
+  margin-bottom: 2rem;
 }

@@ -5,10 +5,10 @@
   --white: #ffffff;
 }
 
-body,
+/* body,
 html {
-  background-color: var(--lightPurple);
-}
+  background-color: var(--lightPurple) !important;
+} */
 
 .introduction__container {
   display: block;
