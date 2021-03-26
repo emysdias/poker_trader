@@ -17,6 +17,38 @@ const Result = () => {
   const [worth, setWorth] = useState(false);
   const [resultPlayer1, setResultPlayer1] = useState([]);
   const [resultPlayer2, setResultPlayer2] = useState([]);
+  const [historyPlayer1, setHistory1] = useState([]);
+  const [historyPlayer2, setHistory2] = useState([]);
+
+  const saveToLocalStorage = () => {
+    var storedPokemons1 = JSON.parse(localStorage.getItem("player1"));
+    var storedPokemons2 = JSON.parse(localStorage.getItem("player2"));
+    if (storedPokemons1 !== null) {
+      var pokemonsData = [];
+      location.state.player1.map((item) => {
+        pokemonsData.push(item);
+      });
+      JSON.parse(localStorage.getItem("player1")).map((item) => {
+        pokemonsData.push(item);
+      });
+      localStorage.setItem("player1", JSON.stringify(pokemonsData));
+    } else {
+      localStorage.setItem("player1", JSON.stringify(location.state.player1));
+    }
+
+    if (storedPokemons2 !== null) {
+      var pokemonsData = [];
+      location.state.player2.map((item) => {
+        pokemonsData.push(item);
+      });
+      JSON.parse(localStorage.getItem("player2")).map((item) => {
+        pokemonsData.push(item);
+      });
+      localStorage.setItem("player2", JSON.stringify(pokemonsData));
+    } else {
+      localStorage.setItem("player2", JSON.stringify(location.state.player2));
+    }
+  };
 
   useEffect(() => {
     var valuePokemon1 = 0;
@@ -27,8 +59,18 @@ const Result = () => {
         var value1 =
           +item.quantity *
           Math.floor(+item.pokemon.experience / +item.pokemon.games);
+        setHistory1((historyPlayer1) => [
+          ...historyPlayer1,
+          {
+            name: item.pokemon.name,
+            experience: item.pokemon.experience,
+            quantity: item.quantity,
+          },
+        ]);
+
         return (valuePokemon1 += +value1);
       });
+
       pokemonsPlayer2.map((item) => {
         var value2 =
           +item.quantity *
@@ -42,7 +84,8 @@ const Result = () => {
         setWorth(true);
       } else {
         var result = Math.abs(valuePokemon2 - valuePokemon1);
-        if (result < 10) {
+        // localStorage.setItem('myData', valuePokemon2);
+        if (result < 8) {
           setWorth(true);
         } else {
           setWorth(false);
@@ -52,7 +95,6 @@ const Result = () => {
 
     calculateResult();
   }, [pokemonsPlayer1, pokemonsPlayer2]);
-
   return (
     <section>
       {worth && worth ? (
@@ -99,6 +141,7 @@ const Result = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={{ pathname: "/first" }}
+              onClick={saveToLocalStorage}
             >
               <Button
                 fontColor={black}

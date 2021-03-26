@@ -3,6 +3,12 @@ import "../styles/layout/header.css";
 import { FaHistory } from "react-icons/fa";
 
 const Header = ({ imgPokemon, color, icon }) => {
+  // localStorage.removeItem("player1");
+  // localStorage.removeItem("player2");
+  // var storedNames = JSON.parse(localStorage.getItem("player1"));
+  // console.log(storedNames);
+  // var storedNames2 = JSON.parse(localStorage.getItem("player2"));
+  // console.log(storedNames2);
   return (
     <section className="header__container">
       <section className="header__container__content">
