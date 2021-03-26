@@ -7,7 +7,7 @@
 }
 
 .player1__container {
-  background-color: var(--greenBlue)!important;
+  background-color: var(--greenBlue) !important;
   height: 100vh;
 }
 
@@ -33,15 +33,24 @@
   display: none;
 }
 
-.player1__container__content{
+.player1__container__content {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 .player1__container__content__select {
-  display: flex;
+  display: block;
   padding: 1rem;
+}
+
+.player1__container__content__selectFlex {
+  display: flex;
   justify-content: space-between;
+}
+
+.player1__container__content__selectBlock,
+.player1__container__content__selectBlock__text {
+  display: block;
 }
 
 .player1__container__content__select__input {

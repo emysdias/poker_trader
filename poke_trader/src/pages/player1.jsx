@@ -77,16 +77,26 @@ const Player1 = () => {
           pokemon.map((item, index) => (
             <section key={index}>
               <section className="player1__container__content__select">
-                <section className="player1__container__content__select__name">
-                  {item.name}
+                <section className="player1__container__content__selectFlex">
+                  <section className="player1__container__content__select__name">
+                    Nome: {item.name}
+                  </section>
+                  <input
+                    className="player1__container__content__select__input"
+                    type="number"
+                    min="0"
+                    max="6"
+                    onChange={(e) => quantityOfPokemon(e.target.value, item)}
+                  />
                 </section>
-                <input
-                  className="player1__container__content__select__input"
-                  type="number"
-                  min="0"
-                  max="6"
-                  onChange={(e) => quantityOfPokemon(e.target.value, item)}
-                />
+                <section className="player1__container__content__selectBlock">
+                  <section className="player1__container__content__selectBlock__text">
+                    Experiência: {item.experience}
+                  </section>
+                  <section className="player1__container__content__selectBlock__text">
+                    Jogos: {item.games}
+                  </section>
+                </section>
               </section>
               <hr style={{ borderColor: lightGreen }} />
             </section>

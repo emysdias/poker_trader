@@ -5,7 +5,7 @@
   --greenBlue: #399494;
   --pink: #ff5a6a;
   --black: #000000;
-  --purple: #628BBD;
+  --purple: #628bbd;
 }
 
 .player2__container {
@@ -40,10 +40,19 @@
   scrollbar-width: none;
 }
 
-.player2__container__content__select {
-  display: flex;
+.player1__container__content__select {
+  display: block;
   padding: 1rem;
+}
+
+.player1__container__content__selectFlex {
+  display: flex;
   justify-content: space-between;
+}
+
+.player1__container__content__selectBlock,
+.player1__container__content__selectBlock__text {
+  display: block;
 }
 
 .player2__container__content__select__input {

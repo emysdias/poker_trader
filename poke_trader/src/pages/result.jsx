@@ -15,33 +15,32 @@ const Result = () => {
   const [pokemonsPlayer1] = useState(location.state.player1);
   const [pokemonsPlayer2] = useState(location.state.player2);
   const [worth, setWorth] = useState(false);
-  const [resultPlayer1, setResultPlayer1] = useState([]);
-  const [resultPlayer2, setResultPlayer2] = useState([]);
+  // const [resultPlayer1, setResultPlayer1] = useState([]);
+  // const [resultPlayer2, setResultPlayer2] = useState([]);
 
   useEffect(() => {
     var valuePokemon1 = 0;
     var valuePokemon2 = 0;
-    var gameIndice1 = 0;
-    var gameIndice2 = 0;
 
     const calculateResult = () => {
       pokemonsPlayer1.map((item) => {
-        var value1 = +item.quantity * +item.pokemon.experience;
-        valuePokemon1 += +value1;
-        gameIndice1 = item.pokemon.games;
+        var value1 =
+          +item.quantity *
+          Math.floor(+item.pokemon.experience / +item.pokemon.games);
+        return (valuePokemon1 += +value1);
       });
       pokemonsPlayer2.map((item) => {
-        var value2 = +item.quantity * +item.pokemon.experience;
-        valuePokemon2 += +value2;
-        gameIndice2 = item.pokemon.games;
+        var value2 =
+          +item.quantity *
+          Math.floor(+item.pokemon.experience / +item.pokemon.games);
+        return (valuePokemon2 += +value2);
       });
 
       if (valuePokemon1 === valuePokemon2) {
         setWorth(true);
       } else {
         var result = Math.abs(valuePokemon2 - valuePokemon1);
-        var game = Math.abs(gameIndice1 - gameIndice2);
-        if (result < 150 && game < 5) {
+        if (result < 10) {
           setWorth(true);
         } else {
           setWorth(false);
@@ -59,7 +58,8 @@ const Result = () => {
           <Header imgPokemon={Pokemon} color={black} icon />
           <section className="result__container">
             <section className="result__container__text">
-              A troca é justa
+              A troca é justa, pois a quantidade de expêriencia sobre a
+              quantidade de lutas em ambos os lados são próximos!
             </section>
           </section>
           <section className="result__container__button">
@@ -81,7 +81,8 @@ const Result = () => {
           <Header imgPokemon={Pokemon} color={black} icon />
           <section className="result__container">
             <section className="result__container__text">
-              A troca não é justa
+              A troca não é justa, pois a quantidade de expêriencia sobre a
+              quantidade de lutas em ambos os lados não são próximos!
             </section>
           </section>
           <section className="result__container__button">

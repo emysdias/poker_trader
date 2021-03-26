@@ -1,5 +1,5 @@
 :root {
-  --white: #FFFFFF;
+  --white: #ffffff;
 }
 
 .header__container {
@@ -28,4 +28,35 @@
   min-width: 2rem;
   margin-right: 1rem;
   margin-top: 0.7rem;
+  cursor: pointer;
+}
+
+.header__container__dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.header__container__dropdown__content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.header__container__dropdown__content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.header__container__dropdown__content a:hover {
+  background-color: #f1f1f1;
+}
+
+.header__container__dropdown:hover .header__container__dropdown__content {
+  display: block;
 }

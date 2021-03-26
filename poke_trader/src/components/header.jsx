@@ -21,10 +21,17 @@ const Header = ({ imgPokemon, color, icon }) => {
         />
       </section>
       {icon ? (
-        <FaHistory
-          className="header__container__content__icon"
-          style={{ color: color }}
-        />
+        <section className="header__container__dropdown">
+          <FaHistory
+            className="header__container__content__icon"
+            style={{ color: color }}
+          />
+          <section className="header__container__dropdown__content">
+            <div>Link 1</div>
+            <div>Link 2</div>
+            <div>Link 3</div>
+          </section>
+        </section>
       ) : null}
     </section>
   );
