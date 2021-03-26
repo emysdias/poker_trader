@@ -1,15 +1,21 @@
 :root {
   --green: #399494;
-  --red: #FF0000;
+  --red: #ff0000;
   --black: #000000;
-  --white: #FFFFFF;
-  --yellowGreen: #B3A125;
+  --white: #ffffff;
+  --yellowGreen: #b3a125;
 }
 
 .result {
-  background-color: var(--green);
+  background-color: var(--yellowGreen);
   height: 100vh;
 }
+
+.resultReject {
+  background-color: var(--red);
+  height: 100vh;
+}
+
 .result__container {
   display: block;
 }

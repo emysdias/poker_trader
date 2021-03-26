@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import api from "../services/api";
 import "../styles/layout/player1.css";
 
@@ -9,18 +8,35 @@ import Pokemon1 from "../assets/bulbasaur.png";
 
 const Player1 = () => {
   const [pokemon, setPokemon] = useState([]);
+  const [selectPokemon, setSelectPokemon] = useState([]);
   const green = "#184A4A";
   const lightGreen = "#A4D541";
 
+  const quantityOfPokemon = (quantity, pokemon) => {
+    selectPokemon.map((index) => {
+      if (index.pokemon.name === pokemon.name) {
+        return selectPokemon.splice(selectPokemon.indexOf(index), 1);
+      }
+      return selectPokemon;
+    });
+
+    setSelectPokemon((selectPokemon) => [
+      ...selectPokemon,
+      {
+        pokemon,
+        quantity,
+      },
+    ]);
+  };
   useEffect(() => {
     const loadPokemons = async () => {
       try {
         var numbers = [];
         setPokemon([]);
 
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 10; i++) {
           const value = Math.random();
-          const multiplied = value * 500;
+          const multiplied = value * 300;
           const answer = Math.floor(multiplied);
           if (answer > 0) {
             numbers.push(answer);
@@ -36,6 +52,7 @@ const Player1 = () => {
             {
               name: response.data.name,
               experience: response.data.base_experience,
+              games: response.data.game_indices.length,
             },
           ]);
         });
@@ -45,7 +62,6 @@ const Player1 = () => {
     };
     loadPokemons();
   }, []);
-
   return (
     <section className="player1__container">
       <Header imgPokemon={Pokemon1} color={green} icon />
@@ -69,6 +85,7 @@ const Player1 = () => {
                   type="number"
                   min="0"
                   max="6"
+                  onChange={(e) => quantityOfPokemon(e.target.value, item)}
                 />
               </section>
               <hr style={{ borderColor: lightGreen }} />
@@ -76,14 +93,13 @@ const Player1 = () => {
           ))}
       </section>
       <section className="player1__container__button">
-        <Link style={{ textDecoration: "none" }} to={{ pathname: "/second" }}>
-          <Button
-            fontColor={green}
-            backgroundColor={lightGreen}
-            text={"Próximo jogador"}
-            shadow
-          />
-        </Link>
+        <Button
+          fontColor={green}
+          backgroundColor={lightGreen}
+          text={"Próximo jogador"}
+          shadow
+          selectedPokemon={selectPokemon}
+        />
       </section>
     </section>
   );
