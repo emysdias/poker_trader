@@ -24,11 +24,11 @@
   color: var(--white);
   text-align: center;
   font-size: 2rem;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .result__container__button {
   text-align: center;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 2rem;
 }

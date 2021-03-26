@@ -15,8 +15,8 @@ const Result = () => {
   const [pokemonsPlayer1] = useState(location.state.player1);
   const [pokemonsPlayer2] = useState(location.state.player2);
   const [worth, setWorth] = useState(false);
-  // const [resultPlayer1, setResultPlayer1] = useState([]);
-  // const [resultPlayer2, setResultPlayer2] = useState([]);
+  const [resultPlayer1, setResultPlayer1] = useState([]);
+  const [resultPlayer2, setResultPlayer2] = useState([]);
 
   useEffect(() => {
     var valuePokemon1 = 0;
@@ -35,6 +35,8 @@ const Result = () => {
           Math.floor(+item.pokemon.experience / +item.pokemon.games);
         return (valuePokemon2 += +value2);
       });
+      setResultPlayer1(valuePokemon1);
+      setResultPlayer2(valuePokemon2);
 
       if (valuePokemon1 === valuePokemon2) {
         setWorth(true);
@@ -49,7 +51,7 @@ const Result = () => {
     };
 
     calculateResult();
-  }, []);
+  }, [pokemonsPlayer1, pokemonsPlayer2]);
 
   return (
     <section>
@@ -59,7 +61,11 @@ const Result = () => {
           <section className="result__container">
             <section className="result__container__text">
               A troca é justa, pois a quantidade de expêriencia sobre a
-              quantidade de lutas em ambos os lados são próximos!
+              quantidade de lutas em ambos os lados de todos os pokémons
+              selecionados são próximos!
+            </section>
+            <section className="result__container__text">
+              {resultPlayer1} ----- {resultPlayer2}
             </section>
           </section>
           <section className="result__container__button">
@@ -82,7 +88,11 @@ const Result = () => {
           <section className="result__container">
             <section className="result__container__text">
               A troca não é justa, pois a quantidade de expêriencia sobre a
-              quantidade de lutas em ambos os lados não são próximos!
+              quantidade de lutas em ambos os lados de todos os pokémons
+              selecionados não são próximos!
+            </section>
+            <section className="result__container__text">
+              {resultPlayer1} ----- {resultPlayer2}
             </section>
           </section>
           <section className="result__container__button">
