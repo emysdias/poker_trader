@@ -1,4 +1,4 @@
-@import '../base/pallete.css';
+@import "../base/pallete.css";
 
 .result {
   background-color: var(--yellowGreen);
@@ -24,5 +24,12 @@
 .result__container__button {
   text-align: center;
   margin-top: 10%;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-height: 475px) {
+  .result,
+  .resultReject {
+    height: 100%;
+  }
 }

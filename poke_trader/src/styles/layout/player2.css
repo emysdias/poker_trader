@@ -8,7 +8,7 @@
 .player2__container__button {
   text-align: center;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .player2__container__content {
@@ -42,12 +42,25 @@
   justify-content: space-between;
 }
 
-.player1__container__content__selectBlock,
-.player1__container__content__selectBlock__text {
-  display: block;
-}
-
 .player2__container__content__select__input {
   width: 4rem;
   text-align: center;
+}
+
+@media (max-width: 550px) {
+  .player2__container__content {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .player2__container__content {
+    width: 20rem;
+  }
+}
+
+@media (max-height: 607px) {
+  .player2__container {
+    height: 100%;
+  }
 }

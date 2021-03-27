@@ -1,4 +1,4 @@
-@import '../base/pallete.css';
+@import "../base/pallete.css";
 
 .player1__container {
   background-color: var(--greenBlue) !important;
@@ -8,7 +8,7 @@
 .player1__container__button {
   text-align: center;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .player1__container__content {
@@ -23,6 +23,7 @@
   overflow-y: scroll;
 }
 
+/* Tirar o scrollbar do container */
 .player1__container__content::-webkit-scrollbar {
   display: none;
 }
@@ -42,12 +43,26 @@
   justify-content: space-between;
 }
 
-.player1__container__content__selectBlock,
-.player1__container__content__selectBlock__text {
-  display: block;
-}
-
 .player1__container__content__select__input {
   width: 4rem;
   text-align: center;
 }
+
+@media (max-width: 550px) {
+  .player1__container__content {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .player1__container__content {
+    width: 20rem;
+  }
+}
+
+@media (max-height: 607px) {
+  .player1__container {
+    height: 100%;
+  }
+}
+

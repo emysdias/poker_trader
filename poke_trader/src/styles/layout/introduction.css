@@ -42,7 +42,7 @@
   }
   .introduction__container__image {
     margin-left: 19rem;
-    margin-top: -3rem;
+    margin-top: -3.5rem;
   }
   .introduction__container__image > img {
     height: 9.375rem;
@@ -56,12 +56,19 @@
   }
   .introduction__container__image {
     margin-left: 16rem;
+    margin-top: -2.5rem;
   }
   .introduction__container__image > img {
-    height: 7rem;
-    width: 7rem;
+    height: 6rem;
+    width: 6rem;
   }
-  .introduction__container__button { 
+  .introduction__container__button {
     margin-top: -2rem;
+  }
+}
+
+@media (max-height: 560px) {
+  .introduction {
+    height: 100%;
   }
 }
