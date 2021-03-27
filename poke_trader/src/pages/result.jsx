@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import Header from "../components/header";
-import Pokemon from "../assets/pikachu.png";
+import { black, yellow } from "../components/pallete";
 import Button from "../components/button";
 
+import Pokemon from "../assets/pikachu.png";
 import "../styles/layout/result.css";
 
 const Result = () => {
   const location = useLocation();
-  const black = "#000000";
-  const yellow = "#FFDE00";
 
   const [pokemonsPlayer1] = useState(location.state.player1);
   const [pokemonsPlayer2] = useState(location.state.player2);

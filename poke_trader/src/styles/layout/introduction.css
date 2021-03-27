@@ -1,10 +1,4 @@
-:root {
-  --lightPurple: #bd94b4;
-  --orange: #de5239;
-  --darkPurple: #392939;
-  /* --purple: #94429F; */
-  --white: #ffffff;
-}
+@import "../base/pallete.css";
 
 .introduction {
   background-color: var(--lightPurple);
@@ -40,4 +34,34 @@
   margin-top: -5rem;
   position: absolute;
   margin-left: 20rem;
+}
+
+@media (max-width: 600px) {
+  .introduction__container {
+    width: 25rem;
+  }
+  .introduction__container__image {
+    margin-left: 19rem;
+    margin-top: -3rem;
+  }
+  .introduction__container__image > img {
+    height: 9.375rem;
+    width: 9.375rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .introduction__container {
+    width: 20rem;
+  }
+  .introduction__container__image {
+    margin-left: 16rem;
+  }
+  .introduction__container__image > img {
+    height: 7rem;
+    width: 7rem;
+  }
+  .introduction__container__button { 
+    margin-top: -2rem;
+  }
 }

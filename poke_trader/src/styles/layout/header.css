@@ -1,10 +1,7 @@
-:root {
-  --white: #ffffff;
-  --green: #184a4a;
-}
+@import '../base/pallete.css';
 
 .header__container {
-  height: 3rem 0;
+  height: 3.5rem;
   background: var(--white);
   display: flex;
   justify-content: space-between;
@@ -58,10 +55,6 @@
 
 .header__container__dropdown__content__history {
   font-size: 1.5rem;
-}
-
-.header__container__dropdown__content__history__data {
-  margin-right: 0.5rem;
 }
 
 .header__container__dropdown__content__history__divisor {

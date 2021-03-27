@@ -1,6 +1,7 @@
 import React from "react";
-import "../styles/layout/button.css";
 import history from "../history";
+
+import "../styles/layout/button.css";
 
 const Button = ({
   text,

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import api from "../services/api";
-
-import "../styles/layout/player2.css";
 import { useLocation } from "react-router-dom";
+import api from "../services/api";
 
 import Header from "../components/header";
 import Button from "../components/button";
+import { pink, purple, white } from "../components/pallete";
+
 import Pokemon from "../assets/mrmime.png";
+import "../styles/layout/player2.css";
 
 const Player2 = () => {
   const location = useLocation();
@@ -14,9 +15,6 @@ const Player2 = () => {
   const [pokemon, setPokemon] = useState([]);
   const [pokemonPlayer1] = useState(location.state.selectedPokemon);
   const [selectPokemon, setSelectPokemon] = useState([]);
-  const purple = "#628BBD";
-  const white = "#FFFFFF";
-  const pink = "#FF5A6A";
 
   const quantityOfPokemon = (quantity, pokemon) => {
     selectPokemon.map((index) => {

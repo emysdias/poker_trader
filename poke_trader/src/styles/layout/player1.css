@@ -1,10 +1,4 @@
-:root {
-  --white: #ffffff;
-  --lightGreen: #73ac31;
-  --green: #184a4a;
-  --greenBlue: #399494;
-  --black: #000000;
-}
+@import '../base/pallete.css';
 
 .player1__container {
   background-color: var(--greenBlue) !important;

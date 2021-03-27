@@ -1,12 +1,4 @@
-:root {
-  --white: #ffffff;
-  --lightGreen: #73ac31;
-  --green: #184a4a;
-  --greenBlue: #399494;
-  --pink: #ff5a6a;
-  --black: #000000;
-  --purple: #628bbd;
-}
+@import '../base/pallete.css';
 
 .player2__container {
   background-color: var(--purple);

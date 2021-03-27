@@ -1,3 +1,5 @@
+@import "../base/pallete.css";
+
 .button__container,
 .button__container__click {
   width: 16rem;
@@ -9,7 +11,7 @@
 }
 
 .button__container__click:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px var(--boxShadow);
   cursor: pointer;
   transform: translateY(0) scale(1.05);
 }

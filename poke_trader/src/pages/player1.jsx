@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import api from "../services/api";
-import "../styles/layout/player1.css";
 
 import Header from "../components/header";
 import Button from "../components/button";
+import { lightGreen, green } from "../components/pallete";
+
 import Pokemon1 from "../assets/bulbasaur.png";
+import "../styles/layout/player1.css";
 
 const Player1 = () => {
   const [pokemon, setPokemon] = useState([]);
   const [selectPokemon, setSelectPokemon] = useState([]);
-  const green = "#184A4A";
-  const lightGreen = "#A4D541";
 
   const quantityOfPokemon = (quantity, pokemon) => {
     selectPokemon.map((index) => {

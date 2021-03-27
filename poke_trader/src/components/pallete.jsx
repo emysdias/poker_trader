@@ -1,0 +1,9 @@
+export const darkPurple = "#392939";
+export const white = "#ffffff";
+export const orange = "#de5239";
+export const green = "#184A4A";
+export const lightGreen = "#A4D541";
+export const purple = "#628BBD";
+export const pink = "#FF5A6A";
+export const black = "#000000";
+export const yellow = "#FFDE00";

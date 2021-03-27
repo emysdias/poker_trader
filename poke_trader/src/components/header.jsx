@@ -1,6 +1,7 @@
 import React from "react";
-import "../styles/layout/header.css";
 import { FaHistory } from "react-icons/fa";
+
+import "../styles/layout/header.css";
 
 const Header = ({ imgPokemon, color, icon }) => {
   var storedPokemons = JSON.parse(localStorage.getItem("pokemonsData"));
