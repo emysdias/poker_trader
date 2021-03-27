@@ -17,6 +17,7 @@ const Result = () => {
   const [resultPlayer1, setResultPlayer1] = useState([]);
   const [resultPlayer2, setResultPlayer2] = useState([]);
 
+  // Essa função que faz salvar no localStorage
   const saveToLocalStorage = () => {
     var storedPokemons = JSON.parse(localStorage.getItem("pokemonsData"));
     var string = "";
@@ -90,6 +91,7 @@ const Result = () => {
           Math.floor(+item.pokemon.experience / +item.pokemon.games);
         return (valuePokemon2 += +value2);
       });
+
       setResultPlayer1(valuePokemon1);
       setResultPlayer2(valuePokemon2);
 

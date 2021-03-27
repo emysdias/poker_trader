@@ -13,6 +13,7 @@ const Button = ({
 }) => {
   let value = 0;
 
+  //Aqui direciona para outra página e mostra erro caso não selecione a quantidade correta
   const quantityPokemons = () => {
     if (selectedPokemon.length < 1 || selectedPokemon.length > 6) {
       alert("Selecione 1 até 6 pokémons");
