@@ -17,36 +17,59 @@ const Result = () => {
   const [worth, setWorth] = useState(false);
   const [resultPlayer1, setResultPlayer1] = useState([]);
   const [resultPlayer2, setResultPlayer2] = useState([]);
-  const [historyPlayer1, setHistory1] = useState([]);
-  const [historyPlayer2, setHistory2] = useState([]);
 
   const saveToLocalStorage = () => {
-    var storedPokemons1 = JSON.parse(localStorage.getItem("player1"));
-    var storedPokemons2 = JSON.parse(localStorage.getItem("player2"));
-    if (storedPokemons1 !== null) {
+    var storedPokemons = JSON.parse(localStorage.getItem("pokemonsData"));
+    var string = "";
+    if (storedPokemons !== null) {
       var pokemonsData = [];
       location.state.player1.map((item) => {
-        pokemonsData.push(item);
+        return pokemonsData.push({
+          pokemon: [
+            string.concat(item.quantity, "  "),
+            string.concat(item.pokemon.name, "  "),
+            string.concat(item.pokemon.experience, "  "),
+          ],
+        });
       });
-      JSON.parse(localStorage.getItem("player1")).map((item) => {
-        pokemonsData.push(item);
-      });
-      localStorage.setItem("player1", JSON.stringify(pokemonsData));
-    } else {
-      localStorage.setItem("player1", JSON.stringify(location.state.player1));
-    }
-
-    if (storedPokemons2 !== null) {
-      var pokemonsData = [];
+      pokemonsData.push({ divisor: "X" });
       location.state.player2.map((item) => {
-        pokemonsData.push(item);
+        return pokemonsData.push({
+          pokemon: [
+            string.concat(item.quantity, "  "),
+            string.concat(item.pokemon.name, "  "),
+            string.concat(item.pokemon.experience, "  "),
+          ],
+        });
       });
-      JSON.parse(localStorage.getItem("player2")).map((item) => {
-        pokemonsData.push(item);
+      pokemonsData.push({ separator: "----------------------------" });
+      JSON.parse(localStorage.getItem("pokemonsData")).map((item) => {
+        return pokemonsData.push(item);
       });
-      localStorage.setItem("player2", JSON.stringify(pokemonsData));
+      localStorage.setItem("pokemonsData", JSON.stringify(pokemonsData));
     } else {
-      localStorage.setItem("player2", JSON.stringify(location.state.player2));
+      var pokemons = [];
+      location.state.player1.map((item) => {
+        return pokemons.push({
+          pokemon: [
+            string.concat(item.quantity, "  "),
+            string.concat(item.pokemon.name, "  "),
+            string.concat(item.pokemon.experience, "  "),
+          ],
+        });
+      });
+      pokemons.push({ divisor: "X" });
+      location.state.player2.map((item) => {
+        return pokemons.push({
+          pokemon: [
+            string.concat(item.quantity, "  "),
+            string.concat(item.pokemon.name, "  "),
+            string.concat(item.pokemon.experience, "  "),
+          ],
+        });
+      });
+      pokemons.push({ separator: "----------------------------" });
+      localStorage.setItem("pokemonsData", JSON.stringify(pokemons));
     }
   };
 
@@ -59,15 +82,6 @@ const Result = () => {
         var value1 =
           +item.quantity *
           Math.floor(+item.pokemon.experience / +item.pokemon.games);
-        setHistory1((historyPlayer1) => [
-          ...historyPlayer1,
-          {
-            name: item.pokemon.name,
-            experience: item.pokemon.experience,
-            quantity: item.quantity,
-          },
-        ]);
-
         return (valuePokemon1 += +value1);
       });
 
@@ -84,7 +98,6 @@ const Result = () => {
         setWorth(true);
       } else {
         var result = Math.abs(valuePokemon2 - valuePokemon1);
-        // localStorage.setItem('myData', valuePokemon2);
         if (result < 8) {
           setWorth(true);
         } else {
@@ -114,6 +127,7 @@ const Result = () => {
             <Link
               style={{ textDecoration: "none" }}
               to={{ pathname: "/first" }}
+              onClick={saveToLocalStorage}
             >
               <Button
                 fontColor={black}
